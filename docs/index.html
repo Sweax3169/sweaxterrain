@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sweax Terrain</title>
+<meta name="description" content="A Roblox Studio plugin that generates terrain, erases it with a brush or a box, and places 54 ready-made structures. Open source.">
+<meta property="og:title" content="Sweax Terrain">
+<meta property="og:description" content="Generate whole worlds in Roblox Studio, erase what you don't want, place structures on top.">
+<meta property="og:image" content="https://sweax3169.github.io/sweaxterrain/media/og.png">
+<meta name="theme-color" content="#eef2f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1311" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="media/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;500;600;700;800;900&family=Overpass+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#top" aria-label="Sweax Terrain">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path class="m-top" d="M16 3 29 10.5 16 18 3 10.5z"/><path class="m-left" d="M3 10.5 16 18v11L3 21.5z"/><path class="m-right" d="M29 10.5 16 18v11l13-7.5z"/><path class="m-peak" d="M12.4 9.3 16 5.6l3.6 3.7-1.9-.5-1.7 1.3-1.6-1.2z"/></svg>
+    <span>Sweax Terrain</span>
+  </a>
+  <nav>
+    <a href="#try" data-i18n="nav.try">Try it</a>
+    <a href="#worlds" data-i18n="nav.worlds">Worlds</a>
+    <a href="#erase" data-i18n="nav.erase">Erase</a>
+    <a href="#structures" data-i18n="nav.structures">Structures</a>
+    <a href="#install" data-i18n="nav.install">Install</a>
+    <a href="https://github.com/Sweax3169/sweaxterrain">GitHub</a>
+  </nav>
+  <button class="lang" type="button" id="lang" aria-label="Language"><b>EN</b> TR</button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-text">
+    <h1>Sweax Terrain</h1>
+    <p class="lead" data-i18n="hero.lead">A Roblox Studio plugin that generates whole worlds, erases terrain with a brush or a box, and places 54 ready-made structures.</p>
+    <div class="actions">
+      <a class="btn go" href="https://github.com/Sweax3169/sweaxterrain/releases/latest/download/SweaxTerrain.rbxmx" data-i18n="hero.download">Download v1.0.0</a>
+      <a class="btn" href="#try" data-i18n="hero.try">Try it here</a>
+    </div>
+    <p class="small" data-i18n="hero.small">SweaxTerrain.rbxmx · Roblox Studio on Windows and macOS · MIT licence</p>
+  </div>
+  <figure class="hero-art float">
+    <img src="media/hero.webp" width="2200" height="1240" alt="A generated alpine valley in Roblox terrain: snowy ridges, green valleys and a river, shown as a floating block">
+  </figure>
+  <ul class="facts">
+    <li><b>9</b> <span data-i18n="facts.biomes">biomes, blended by weight</span></li>
+    <li><b>8</b> <span data-i18n="facts.worlds">ready-made worlds</span></li>
+    <li><b>54</b> <span data-i18n="facts.structures">structures and landforms</span></li>
+    <li><b>Ctrl+Z</b> <span data-i18n="facts.undo">undoes every step</span></li>
+  </ul>
+</section>
+
+<section class="try" id="try">
+  <div class="sec-head">
+    <h2 data-i18n="try.title">Try it here</h2>
+    <p data-i18n="try.lead">This is the plugin's panel with its own generator, ported to JavaScript. The same seed and settings make the same world as in Studio.</p>
+  </div>
+  <div class="studio">
+    <div class="studio-bar"><span>Sweax Terrain 1.0.0</span><span class="studio-seed" id="seedLabel"></span></div>
+    <div class="studio-body">
+      <aside class="sp" id="panel" aria-label="Sweax Terrain panel"></aside>
+      <div class="viewport">
+        <canvas id="view" aria-label="3D view of the generated terrain"></canvas>
+        <div class="vp-hint" id="vpHint" data-i18n="try.hint">Drag to turn · scroll to zoom</div>
+        <figure class="vp-struct" id="vpStruct" hidden><img alt=""><figcaption></figcaption></figure>
+        <p class="vp-fallback" id="vpFallback" hidden data-i18n="try.nogl">Your browser has WebGL 2 turned off, so the 3D view cannot start.</p>
+      </div>
+    </div>
+  </div>
+  <p class="note" data-i18n="try.note">Checked against Studio: in 22 worlds (238,848 columns) every surface height, surface material and water level matches. Width and depth go up to 2048 studs in Studio; the browser stops at 1024.</p>
+</section>
+
+<section class="worlds" id="worlds">
+  <div class="sec-head">
+    <h2 data-i18n="worlds.title">Eight worlds to start from</h2>
+    <p data-i18n="worlds.lead">Each one sets biomes, water and detail for you. Every press of Generate world rolls a new seed, so no two runs are the same.</p>
+  </div>
+  <div class="world-grid" id="worldGrid"></div>
+</section>
+
+<section class="biomes" id="biomes">
+  <div class="sec-head">
+    <h2 data-i18n="biomes.title">Nine biomes, blended by weight</h2>
+    <p data-i18n="biomes.lead">Every biome is its own height function. Turn on several and their regions flow into each other; each weight decides how much land that biome gets.</p>
+  </div>
+  <div class="biome-grid" id="biomeGrid"></div>
+</section>
+
+<section class="water">
+  <div class="sec-head">
+    <h2 data-i18n="water.title">Lakes, rivers, a coast and caves</h2>
+  </div>
+  <div class="water-grid">
+    <figure><img src="media/world-nehir.webp" loading="lazy" width="1400" height="900" alt="River plains with two winding rivers and sand banks"><figcaption><b data-i18n="water.rivers">Rivers</b> <span data-i18n="water.riversText">Up to five, each with its own width and meander. Banks get sand only where there is real water.</span></figcaption></figure>
+    <figure><img src="media/world-sahil.webp" loading="lazy" width="1400" height="900" alt="A coast: the land slopes down into the sea along one edge"><figcaption><b data-i18n="water.coast">Ocean edge</b> <span data-i18n="water.coastText">Pick a side. The land slopes into the sea across about a third of the area, with a beach along the shore.</span></figcaption></figure>
+    <figure><img src="media/caves.webp" loading="lazy" width="1400" height="900" alt="Hills cut open to show cave tunnels inside the terrain"><figcaption><b data-i18n="water.caves">Caves</b> <span data-i18n="water.cavesText">Worm tunnels at least 6 studs under the surface. Cut open here so you can see them.</span></figcaption></figure>
+  </div>
+</section>
+
+<section class="erase" id="erase">
+  <div class="sec-head">
+    <h2 data-i18n="erase.title">Erase like you draw</h2>
+    <p data-i18n="erase.lead">The eraser works on any terrain in the place, not only on what Sweax Terrain made.</p>
+  </div>
+  <div class="erase-grid">
+    <figure><video src="media/erase.mp4" poster="media/erase.webp" autoplay muted loop playsinline width="1000" height="640"></video><figcaption><b data-i18n="erase.brush">Brush</b> <span data-i18n="erase.brushText">Turn the brush on and click or drag. The radius goes from 4 to 80 studs; a red ball shows where it bites.</span></figcaption></figure>
+    <figure><video src="media/region.mp4" poster="media/region.webp" autoplay muted loop playsinline width="1000" height="640"></video><figcaption><b data-i18n="erase.region">Region</b> <span data-i18n="erase.regionText">Click two corners and everything between them goes, with a vertical margin you set.</span></figcaption></figure>
+  </div>
+  <p class="note" data-i18n="erase.note">Erase the last generated area, or all terrain in the place (that one asks twice). Ctrl+Z brings any of it back.</p>
+</section>
+
+<section class="structures" id="structures">
+  <div class="sec-head">
+    <h2 data-i18n="structures.title">54 structures, placed with a click</h2>
+    <p data-i18n="structures.lead">Made from plain parts, so there is nothing to load. A ghost follows your mouse and sits on the ground; every placement gets its own seed, and moss, ruin, scale and rotation are yours to set.</p>
+  </div>
+  <figure class="struct-video"><video src="media/structures.mp4" poster="media/structures.webp" autoplay muted loop playsinline width="1000" height="640"></video></figure>
+  <div class="filters" id="structFilters"></div>
+  <div class="struct-grid" id="structGrid"></div>
+</section>
+
+<section class="how" id="how">
+  <div class="sec-head">
+    <h2 data-i18n="how.title">How it works</h2>
+  </div>
+  <div class="how-grid">
+    <figure class="diagram"><img id="arch" src="art/architecture-light-en.svg" loading="lazy" width="980" height="560" alt="Plugin architecture: panel, generator with two passes, eraser and structure library writing into Roblox terrain and the workspace"></figure>
+    <ol class="steps">
+      <li data-i18n="how.s1">The area is split into 4-stud columns, the size of a Roblox terrain voxel.</li>
+      <li data-i18n="how.s2">Pass one: each column's coordinates are bent by domain warp, every enabled biome gives a height, and the weights (cubed, so regions separate) blend them. Lakes, rivers and the coast then dig into that height map.</li>
+      <li data-i18n="how.s3">Beaches go only where land meets real water, within the beach width.</li>
+      <li data-i18n="how.s4">Pass two: materials are chosen per voxel from slope, depth, snow line and patches; rock outcrops and caves bend the occupancy; then 24 × 24 column parcels go to WriteVoxels one by one, with a progress bar and Cancel.</li>
+      <li data-i18n="how.s5">Every generate, erase and placement sets a ChangeHistory waypoint, so Ctrl+Z works the way it does for everything else in Studio.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="install" id="install">
+  <div class="sec-head">
+    <h2 data-i18n="install.title">Install</h2>
+  </div>
+  <ol class="install-steps">
+    <li><span data-i18n="install.s1">Download</span> <a href="https://github.com/Sweax3169/sweaxterrain/releases/latest/download/SweaxTerrain.rbxmx"><code>SweaxTerrain.rbxmx</code></a>.</li>
+    <li><span data-i18n="install.s2">Put it in your Studio plugins folder:</span>
+      <div class="paths"><div><b>Windows</b><code>%LOCALAPPDATA%\Roblox\Plugins</code></div><div><b>macOS</b><code>~/Documents/Roblox/Plugins</code></div></div>
+      <span class="small" data-i18n="install.s2b">In Studio you can also open it from the Plugins tab: Plugins Folder.</span></li>
+    <li data-i18n="install.s3">Restart Roblox Studio.</li>
+    <li data-i18n="install.s4">Open the Plugins tab and click Sweax Terrain. The panel follows Studio's language and theme; the EN · TR button switches language.</li>
+  </ol>
+  <p class="small"><span data-i18n="install.src">From source:</span> <code>python tools/build.py --install</code></p>
+</section>
+
+<section class="faq" id="faq">
+  <div class="sec-head"><h2 data-i18n="faq.title">Questions</h2></div>
+  <details><summary data-i18n="faq.q1">Will it touch terrain I already have?</summary><p data-i18n="faq.a1">Generating clears and rewrites only the area you set (plus room above it). The eraser removes what you point at. Everything else stays, and Ctrl+Z undoes any step.</p></details>
+  <details><summary data-i18n="faq.q2">Does it need HTTP or any assets?</summary><p data-i18n="faq.a2">No. It makes no web requests and the structures are plain parts, so there is nothing to upload or approve.</p></details>
+  <details><summary data-i18n="faq.q3">How big can a world be?</summary><p data-i18n="faq.a3">Up to 2048 × 2048 studs per run. A 512 × 512 world takes well under a second; bigger ones show progress and can be cancelled.</p></details>
+  <details><summary data-i18n="faq.q4">Where do placed structures go?</summary><p data-i18n="faq.a4">Into a folder called SweaxYapilar in Workspace. Each model carries SweaxStructure and SweaxSeed attributes, so you can find or rebuild one later.</p></details>
+  <details><summary data-i18n="faq.q5">Can I share it with a friend?</summary><p data-i18n="faq.a5">Yes. Send the .rbxmx file or this page. It is MIT licensed.</p></details>
+</section>
+</main>
+
+<footer class="foot">
+  <span>Sweax Studios · <a href="https://sweaxstudios.xyz">sweaxstudios.xyz</a></span>
+  <span><a href="https://github.com/Sweax3169/sweaxterrain">GitHub</a> · <a href="https://github.com/Sweax3169/sweaxterrain/blob/main/LICENSE">MIT</a> · <a href="https://github.com/Sweax3169/sweaxterrain/blob/main/README.tr.md">Türkçe README</a></span>
+</footer>
+<script type="module" src="js/site.js"></script>
+</body>
+</html>

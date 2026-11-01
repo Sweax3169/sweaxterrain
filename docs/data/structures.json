@@ -1,0 +1,488 @@
+[
+ {
+  "id": "kademeliKaide",
+  "tr": "Kademeli Kaide",
+  "en": "Stepped Plinth",
+  "icon": "🏛",
+  "cat": "Mimari",
+  "catEn": "Architecture",
+  "landform": false
+ },
+ {
+  "id": "heykelKaidesi",
+  "tr": "Madenci Heykeli",
+  "en": "Miner Statue",
+  "icon": "⛏",
+  "cat": "Mimari",
+  "catEn": "Architecture",
+  "landform": false
+ },
+ {
+  "id": "taskemer",
+  "tr": "Taş Kemer",
+  "en": "Stone Arch",
+  "icon": "🚪",
+  "cat": "Mimari",
+  "catEn": "Architecture",
+  "landform": false
+ },
+ {
+  "id": "sutunlar",
+  "tr": "Kırık Sütunlar",
+  "en": "Broken Columns",
+  "icon": "🏺",
+  "cat": "Kalıntı",
+  "catEn": "Ruins",
+  "landform": false
+ },
+ {
+  "id": "kalintiDuvar",
+  "tr": "Kalıntı Duvar",
+  "en": "Ruined Wall",
+  "icon": "🧱",
+  "cat": "Kalıntı",
+  "catEn": "Ruins",
+  "landform": false
+ },
+ {
+  "id": "merdivenSeti",
+  "tr": "Taş Merdiven",
+  "en": "Stone Stairs",
+  "icon": "📶",
+  "cat": "Mimari",
+  "catEn": "Architecture",
+  "landform": false
+ },
+ {
+  "id": "dikiliTaslar",
+  "tr": "Dikili Taşlar",
+  "en": "Standing Stones",
+  "icon": "🗿",
+  "cat": "Kalıntı",
+  "catEn": "Ruins",
+  "landform": false
+ },
+ {
+  "id": "gozetlemeKulesi",
+  "tr": "Gözetleme Kulesi",
+  "en": "Watchtower",
+  "icon": "🗼",
+  "cat": "Mimari",
+  "catEn": "Architecture",
+  "landform": false
+ },
+ {
+  "id": "taskopru",
+  "tr": "Taş Köprü",
+  "en": "Stone Bridge",
+  "icon": "🌉",
+  "cat": "Mimari",
+  "catEn": "Architecture",
+  "landform": false
+ },
+ {
+  "id": "suKanali",
+  "tr": "Su Kanalı",
+  "en": "Water Channel",
+  "icon": "💧",
+  "cat": "Su",
+  "catEn": "Water",
+  "landform": false
+ },
+ {
+  "id": "kayaOlusum",
+  "tr": "Kaya Oluşumu",
+  "en": "Rock Formation",
+  "icon": "⛰",
+  "cat": "Doğa",
+  "catEn": "Nature",
+  "landform": false
+ },
+ {
+  "id": "avluDuvari",
+  "tr": "Avlu Duvarı",
+  "en": "Courtyard Wall",
+  "icon": "🏰",
+  "cat": "Mimari",
+  "catEn": "Architecture",
+  "landform": false
+ },
+ {
+  "id": "meydanZemini",
+  "tr": "Meydan Zemini",
+  "en": "Plaza Floor",
+  "icon": "⬛",
+  "cat": "Zemin",
+  "catEn": "Ground",
+  "landform": false
+ },
+ {
+  "id": "madenGirisi",
+  "tr": "Maden Girişi",
+  "en": "Mine Entrance",
+  "icon": "⛏",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "madenTuneli",
+  "tr": "Maden Tüneli",
+  "en": "Mine Tunnel",
+  "icon": "🕳",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "vincKulesi",
+  "tr": "Vinç Kulesi",
+  "en": "Crane Tower",
+  "icon": "🏗",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "rayHatti",
+  "tr": "Ray Hattı",
+  "en": "Rail Line",
+  "icon": "🛤",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "cevherVagonu",
+  "tr": "Cevher Vagonu",
+  "en": "Ore Cart",
+  "icon": "🛒",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "cevherDamari",
+  "tr": "Cevher Damarı",
+  "en": "Ore Vein",
+  "icon": "💎",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "kuyuAgzi",
+  "tr": "Kuyu Ağzı",
+  "en": "Shaft Head",
+  "icon": "⏬",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "madenciKampi",
+  "tr": "Madenci Kampı",
+  "en": "Miners' Camp",
+  "icon": "🏕",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "cevherDeposu",
+  "tr": "Cevher Deposu",
+  "en": "Ore Depot",
+  "icon": "🏚",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "konveyorIskele",
+  "tr": "Konveyör İskelesi",
+  "en": "Conveyor Gantry",
+  "icon": "📐",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "eritmeOcagi",
+  "tr": "Eritme Ocağı",
+  "en": "Smelting Furnace",
+  "icon": "🔥",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "cevherYigini",
+  "tr": "Cevher Yığını",
+  "en": "Ore Pile",
+  "icon": "🔶",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "asansorKulesi",
+  "tr": "Asansör Kulesi",
+  "en": "Lift Tower",
+  "icon": "⏫",
+  "cat": "Maden",
+  "catEn": "Mining",
+  "landform": false
+ },
+ {
+  "id": "susMesale",
+  "tr": "Meşale",
+  "en": "Torch",
+  "icon": "🔥",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susFener",
+  "tr": "Fener Direği",
+  "en": "Lamp Post",
+  "icon": "🏮",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susSandik",
+  "tr": "Sandık İstifi",
+  "en": "Crate Stack",
+  "icon": "📦",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susVaril",
+  "tr": "Variller",
+  "en": "Barrels",
+  "icon": "🛢",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susDestek",
+  "tr": "Ahşap Destek",
+  "en": "Timber Prop",
+  "icon": "🚧",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susIskele",
+  "tr": "İskele",
+  "en": "Scaffold",
+  "icon": "📶",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susCevherYigin",
+  "tr": "Cevher Yığını",
+  "en": "Ore Heap",
+  "icon": "💎",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susMoloz",
+  "tr": "Moloz Yığını",
+  "en": "Rubble Pile",
+  "icon": "⚒",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susKampAtesi",
+  "tr": "Kamp Ateşi",
+  "en": "Campfire",
+  "icon": "🔥",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susAletStandi",
+  "tr": "Alet Standı",
+  "en": "Tool Rack",
+  "icon": "⛏",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susTabela",
+  "tr": "Tabela",
+  "en": "Signpost",
+  "icon": "🚏",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susCadir",
+  "tr": "Çadır",
+  "en": "Tent",
+  "icon": "⛺",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susCit",
+  "tr": "Çit Hattı",
+  "en": "Fence Line",
+  "icon": "🚧",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susDinamit",
+  "tr": "Dinamit Sandığı",
+  "en": "Dynamite Crate",
+  "icon": "🧨",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susSuOlugu",
+  "tr": "Su Oluğu",
+  "en": "Water Trough",
+  "icon": "💧",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susOdun",
+  "tr": "Odun Yığını",
+  "en": "Woodpile",
+  "icon": "🌲",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susElArabasi",
+  "tr": "El Arabası",
+  "en": "Wheelbarrow",
+  "icon": "🛒",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "susBayrak",
+  "tr": "Bayrak Direği",
+  "en": "Flagpole",
+  "icon": "🚩",
+  "cat": "Süs",
+  "catEn": "Props",
+  "landform": false
+ },
+ {
+  "id": "alanDuzle",
+  "tr": "Düzle",
+  "en": "Flatten",
+  "icon": "▬",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanTemizle",
+  "tr": "Temizle",
+  "en": "Clear",
+  "icon": "🧽",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanPlato",
+  "tr": "Maden Platosu",
+  "en": "Mining Plateau",
+  "icon": "⬛",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanTasOcagi",
+  "tr": "Taş Ocağı Çukuru",
+  "en": "Quarry Pit",
+  "icon": "🕳",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanKanyon",
+  "tr": "Kanyon Yarığı",
+  "en": "Canyon Rift",
+  "icon": "🏜",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanMagaraAgzi",
+  "tr": "Mağara Ağzı",
+  "en": "Cave Mouth",
+  "icon": "🚪",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanKayaSirti",
+  "tr": "Kaya Sırtı",
+  "en": "Rock Ridge",
+  "icon": "⛰",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanTepe",
+  "tr": "Tepe",
+  "en": "Hill",
+  "icon": "🌄",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanGolet",
+  "tr": "Gölet",
+  "en": "Pond",
+  "icon": "💧",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ },
+ {
+  "id": "alanCevherYatagi",
+  "tr": "Cevher Yatağı",
+  "en": "Ore Bed",
+  "icon": "💎",
+  "cat": "Alan",
+  "catEn": "Landforms",
+  "landform": true
+ }
+]
